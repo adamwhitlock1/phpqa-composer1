@@ -31,8 +31,3 @@ RUN apk add --no-cache --virtual .tool-deps $TOOL_DEPS $LIB_DEPS \
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD php $TOOLBOX_TARGET_DIR/toolbox list-tools
-
-COPY app /var/www/
-RUN cd /var/www
-RUN pwd
-RUN php -S localhost:8000
